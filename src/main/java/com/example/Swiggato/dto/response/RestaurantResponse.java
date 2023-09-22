@@ -20,5 +20,5 @@ public class RestaurantResponse {
 
     boolean opened;
 
-    List<FoodResponse> menu;
+    List<MenuResponse> menu;
 }

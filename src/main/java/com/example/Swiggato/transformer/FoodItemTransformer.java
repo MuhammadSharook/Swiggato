@@ -1,27 +1,27 @@
 package com.example.Swiggato.transformer;
 
-import com.example.Swiggato.dto.request.FoodRequest;
-import com.example.Swiggato.dto.response.FoodResponse;
-import com.example.Swiggato.model.FoodItem;
+import com.example.Swiggato.dto.request.MenuRequest;
+import com.example.Swiggato.dto.response.MenuResponse;
+import com.example.Swiggato.model.MenuItem;
 
 public class FoodItemTransformer {
 
-    public static FoodItem FoodRequestToFoodItem(FoodRequest foodRequest){
-        return FoodItem.builder()
-                .dishName(foodRequest.getDishName())
-                .price(foodRequest.getPrice())
-                .category(foodRequest.getCategory())
-                .veg(foodRequest.isVeg())
-                .available(foodRequest.isAvailable())
+    public static MenuItem FoodRequestToFoodItem(MenuRequest menuRequest){
+        return MenuItem.builder()
+                .dishName(menuRequest.getDishName())
+                .price(menuRequest.getPrice())
+                .category(menuRequest.getCategory())
+                .veg(menuRequest.isVeg())
+                .available(menuRequest.isAvailable())
                 .build();
     }
 
-    public static FoodResponse FoodItemToFoodResponse(FoodItem foodItem){
-        return FoodResponse.builder()
-                .dishName(foodItem.getDishName())
-                .price(foodItem.getPrice())
-                .veg(foodItem.isVeg())
-                .category(foodItem.getCategory())
+    public static MenuResponse FoodItemToFoodResponse(MenuItem menuItem){
+        return MenuResponse.builder()
+                .dishName(menuItem.getDishName())
+                .price(menuItem.getPrice())
+                .veg(menuItem.isVeg())
+                .category(menuItem.getCategory())
                 .build();
     }
 }

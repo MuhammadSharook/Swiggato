@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/food")
-public class FoodItemController {
+@RequestMapping("/menu")
+public class MenuController {
 
     // get all foods of a particualr category
 
