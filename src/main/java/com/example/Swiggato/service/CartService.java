@@ -59,7 +59,6 @@ public class CartService {
         // ready to add item to cart
         FoodItem foodItem = FoodItem.builder()
                 .menuItem(menuItem)
-                .cart(customer.getCart())
                 .requiredQuantity(foodRequest.getRequiredQuantity())
                 .totalCost(foodRequest.getRequiredQuantity()*menuItem.getPrice())
                 .build();
@@ -68,10 +67,12 @@ public class CartService {
         FoodItem savedFoodItem = foodRepo.save(foodItem);
 
         double cartTotal = 0;
+        cart.getFoodItems().add(savedFoodItem);
         for(FoodItem food: cart.getFoodItems()){
             cartTotal += food.getRequiredQuantity()*food.getMenuItem().getPrice();
         }
-        cart.getFoodItems().add(savedFoodItem);
+
+        savedFoodItem.setCart(cart);
         cart.setCartTotal(cartTotal);
         menuItem.getFoodItems().add(savedFoodItem);
 
