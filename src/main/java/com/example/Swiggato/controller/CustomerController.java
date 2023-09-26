@@ -40,4 +40,9 @@ public class CustomerController {
             return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
+
+
+    // get the customer with most number of orders
+
+    // get the female customer with least number of orders
 }

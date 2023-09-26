@@ -27,7 +27,7 @@ public class RestaurantTransformer {
 
         List<MenuResponse> menu = restaurant.getAvailableMenuItems()
                 .stream()
-                .map(foodItem -> FoodItemTransformer.FoodItemToFoodResponse(foodItem))
+                .map(foodItem -> MenuItemTransformer.MenuItemToMenuResponse(foodItem))
                 .collect(Collectors.toList());
 
         return RestaurantResponse.builder()

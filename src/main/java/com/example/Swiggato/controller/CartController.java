@@ -24,11 +24,10 @@ public class CartController {
 
     @PostMapping("/add")
     public ResponseEntity addFoodItemToCart(@RequestBody FoodRequest foodRequest){
-        try{
-        CartStatusResponse cartStatusResponse = cartService.addFoodItemToCart(foodRequest);
-        return new ResponseEntity(cartStatusResponse,HttpStatus.CREATED);
-        }
-        catch (Exception e){
+        try {
+            CartStatusResponse cartStatusResponse = cartService.addFoodItemToCart(foodRequest);
+            return new ResponseEntity(cartStatusResponse, HttpStatus.CREATED);
+        } catch (Exception e) {
             return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
