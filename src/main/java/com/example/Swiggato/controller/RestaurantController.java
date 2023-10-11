@@ -33,8 +33,13 @@ public class RestaurantController {
 
     @PutMapping("/update/status")
     public ResponseEntity changeOpenedStatus(@RequestParam int id){
-        String message = restaurantService.changeOpenedStatus(id);
-        return new ResponseEntity(message,HttpStatus.ACCEPTED);
+        try {
+            String message = restaurantService.changeOpenedStatus(id);
+            return new ResponseEntity(message, HttpStatus.ACCEPTED);
+        }catch (Exception e)
+        {
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
     }
 
 

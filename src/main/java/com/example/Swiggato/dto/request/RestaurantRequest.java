@@ -15,7 +15,7 @@ public class RestaurantRequest {
 
     String location;
 
-    RestarauntCategory restrauntCategory;
+    RestarauntCategory restaurantCategory;
 
     String contactNumber;
 

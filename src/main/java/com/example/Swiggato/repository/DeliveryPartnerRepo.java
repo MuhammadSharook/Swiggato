@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DeliveryPartnerRepo extends JpaRepository<DeliveryPartner,Integer> {
-    String findRandomPartner = "select p from DeliveryPartner p order by RAND() LIMIT 1";
+    String findRandomPartner = "select * from delivery_partner Order By RANDOM() LIMIT 1";
 
-    @Query(value = findRandomPartner)
+    @Query(value = findRandomPartner,nativeQuery = true)
     DeliveryPartner findRandomDeliveryPartner();
 }

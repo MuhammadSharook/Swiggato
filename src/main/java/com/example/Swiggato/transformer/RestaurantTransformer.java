@@ -16,7 +16,7 @@ public class RestaurantTransformer {
                  .name(restaurantRequest.getName())
                  .contactNumber(restaurantRequest.getContactNumber())
                  .location(restaurantRequest.getLocation())
-                 .restrauntCategory(restaurantRequest.getRestrauntCategory())
+                 .restrauntCategory(restaurantRequest.getRestaurantCategory())
                  .opened(true)
                  .availableMenuItems(new ArrayList<>())
                  .orders(new ArrayList<>())
